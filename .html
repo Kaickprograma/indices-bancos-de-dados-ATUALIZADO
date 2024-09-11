@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Índices em Bancos de Dados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        .index-content {
+            display: none;
+            margin-top: 20px;
+        }
+        .index-content.active {
+            display: block;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tipos de Índices em Bancos de Dados</h1>
+    <a href="#" id="link-index">Clique aqui para ver os tipos de índices</a>
+
+    <div class="index-content" id="index-content">
+        <h2>B-tree Index</h2>
+        <p>O B-tree index é um dos tipos mais comuns de índice em bancos de dados. Ele organiza os dados em uma estrutura de árvore balanceada, permitindo uma rápida recuperação de informações. É eficiente para consultas que envolvem igualdade e intervalos.</p>
+
+        <h2>Bitmap Index</h2>
+        <p>O Bitmap Index é utilizado principalmente em bancos de dados de data warehouses. Ele é eficiente para colunas com valores discretos e de baixa cardinalidade, armazenando os dados como bits em um mapa, o que permite uma recuperação rápida.</p>
+
+        <h2>Hash Index</h2>
+        <p>O Hash Index é usado em consultas de igualdade. Ele converte os valores da chave em um valor de hash, que é então utilizado para localizar rapidamente o registro correspondente. Não é eficiente para consultas por intervalos.</p>
+    </div>
+</div>
+
+<footer>
+    Alunos: Kaick Xavier Resende e Victor Gabriel Campos Carvalho
+</footer>
+
+<script>
+    document.getElementById('link-index').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('index-content').classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
